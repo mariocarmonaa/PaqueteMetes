@@ -1,3 +1,7 @@
+/**
+ * Programa.java
+ * Autor: Linus Torvalds
+**/
 import java.util.Scanner;
 
 public class Programa {
