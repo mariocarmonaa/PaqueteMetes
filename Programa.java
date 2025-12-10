@@ -1,3 +1,7 @@
+/**
+ * Programa.java
+ * Autor: Mario Carmona
+**/
 import java.util.Scanner;
 
 public class Programa {
