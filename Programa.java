@@ -20,6 +20,9 @@ public class Programa {
                 case "2": 
 				    verInforme();
                     break;
+                case "3":
+                    enviar();
+                    break;
                 case "X":
                 case "x":
                     repetirMenu = false;
@@ -72,8 +75,13 @@ public class Programa {
         System.out.println("APLICACIÓN DE PaqueteMetes versión 1.0");
         System.out.println("\t1. Registrar envío");
         System.out.println("\t2. Ver Informe de Envío");
+        System.out.println("\t3. Realizar Envío");
         System.out.println("\tX. Salir");
         System.out.print("\tOpción: ");
         return teclado.nextLine();
+    }
+
+    public static void enviar(){
+        
     }
 }
