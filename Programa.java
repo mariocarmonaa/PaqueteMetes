@@ -14,9 +14,9 @@ public class Programa {
                     resgistrarEnvio();
                     break;
                 case "2": 
+				    verInforme();
                     break;
                 case "X":
-                    break;
                 case "x":
                     repetirMenu = false;
                     break;
@@ -35,13 +35,15 @@ public class Programa {
                 System.out.println("\nRegistro de envío");
                 System.out.print("\tNúmero: ");
                 String numero = teclado.nextLine();
+				
+				if (numero.isEmpty()) {
+					break;
+				}
 
                 System.out.print("\tPrecio: ");
                 Float precio = Float.valueOf(teclado.nextLine());
 
-                Envio envio = new Envio();
-                envio.numero = numero;
-                envio.precio = precio;
+                Envio envio = new Envio(numero, precio);
                 envios[iEnvios++] = envio;
 
                 System.out.println("Registro OK");
@@ -49,6 +51,17 @@ public class Programa {
                 System.out.println("Registro KO");
             }
         }
+    }
+	
+	public static void verInforme (){
+        Float suma = 0f;
+		System.out.println ("\nINFORME DE ENVÍOS");
+		for (int i = 0; i < iEnvios; i++){
+			System.out.println ("\t" + (i + 1) + ". " + envios[i].verComoString());
+            suma += envios[i].precio;
+		}
+		System.out.println ("\t---------------------");
+		System.out.println ("\tTOTAL:\t\t" + suma + "€\n");
     }
 
     public static String verMenu(){
@@ -58,9 +71,5 @@ public class Programa {
         System.out.println("\tX. Salir");
         System.out.print("\tOpción: ");
         return teclado.nextLine();
-    }
-
-    public static void verInforme (){
-        
     }
 }
