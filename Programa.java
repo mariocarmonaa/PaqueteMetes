@@ -1,6 +1,6 @@
 /**
  * Programa.java
- * Autor: Mario Carmona
+ * Autor: Linus Torvalds
 **/
 import java.util.Scanner;
 
